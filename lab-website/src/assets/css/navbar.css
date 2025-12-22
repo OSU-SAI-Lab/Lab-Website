@@ -1,0 +1,24 @@
+/* Default: transparent on hero section */
+.lab-navbar {
+    background-color: transparent !important;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+    font-weight: 600;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    backdrop-filter: none;
+  }
+  
+  /* Text always white */
+  .lab-navbar .navbar-brand,
+  .lab-navbar .nav-link,
+  .lab-navbar .navbar-toggler-icon {
+    color: white !important;
+  }
+  
+  /* After scroll: turn black with slight blur (modern UI) */
+  .lab-navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: blur(6px);
+  }
+  
