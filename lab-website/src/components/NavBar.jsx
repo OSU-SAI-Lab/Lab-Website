@@ -1,9 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import "../assets/css/navbar.css";
 
 function NavBar() {
@@ -11,7 +11,7 @@ function NavBar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50); // after 50px, become solid
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -19,20 +19,39 @@ function NavBar() {
   }, []);
 
   return (
-    <Navbar expand="lg" className={`lab-navbar ${scrolled ? "scrolled" : ""}`} fixed="top">
+    <Navbar
+      expand="lg"
+      fixed="top"
+      className={`lab-navbar ${scrolled ? "scrolled" : ""}`}
+    >
       <Container>
-        <Navbar.Brand href="#home">SAI Lab</Navbar.Brand>
+        {/* Brand */}
+        <Navbar.Brand as={NavLink} to="/">
+          SAI Lab
+        </Navbar.Brand>
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#research">Research</Nav.Link>
-            <Nav.Link href="#research">People</Nav.Link>
-            {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            </NavDropdown> */}
+            <Nav.Link as={NavLink} to="/" end>
+              Home
+            </Nav.Link>
+
+            <Nav.Link as={NavLink} to="/research">
+              Research
+            </Nav.Link>
+
+            <Nav.Link as={NavLink} to="/people">
+              People
+            </Nav.Link>
+
+            {/*
+            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown.Item as={NavLink} to="/action1">
+                Action
+              </NavDropdown.Item>
+            </NavDropdown>
+            */}
           </Nav>
         </Navbar.Collapse>
       </Container>
