@@ -1,0 +1,23 @@
+[
+    {
+      "id": "memcached-rdma-2011",
+      "title": "Memcached design on high performance RDMA capable interconnects",
+      "authors": [
+        "J. Jose",
+        "H. Subramoni",
+        "M. Luo",
+        "M. Zhang",
+        "J. Huang",
+        "M. Wasi-ur-Rahman"
+      ],
+      "venue": "International Conference on Parallel Processing",
+      "year": 2011,
+      "citedBy": 271,
+      "links": {
+        "pdf": "https://example.com/paper.pdf",
+        "doi": "https://doi.org/xxxx",
+        "scholar": "https://scholar.google.com/..."
+      }
+    }
+  ]
+  

@@ -45,6 +45,10 @@ function NavBar() {
               People
             </Nav.Link>
 
+            <Nav.Link as={NavLink} to="/publications">
+              Publications
+            </Nav.Link>
+
             {/*
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item as={NavLink} to="/action1">
