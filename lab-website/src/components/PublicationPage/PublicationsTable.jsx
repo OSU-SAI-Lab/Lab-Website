@@ -1,3 +1,5 @@
+import publications from "../../assets/css/publications.css";
+
 function PublicationsTable({ data }) {
     return (
       <table className="publications-table">

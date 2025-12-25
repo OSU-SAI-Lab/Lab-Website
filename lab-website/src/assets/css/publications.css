@@ -1,0 +1,38 @@
+.publications-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .publications-table th {
+    text-align: left;
+    color: #666;
+    font-weight: 600;
+    padding-bottom: 8px;
+  }
+  
+  .publications-table td {
+    padding: 12px 0;
+    vertical-align: top;
+  }
+  
+  .publications-table a {
+    color: #1a0dab;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  
+  .authors {
+    color: #555;
+    font-size: 0.9rem;
+  }
+  
+  .venue {
+    color: #777;
+    font-size: 0.85rem;
+  }
+  
+  .cited {
+    color: #1a73e8;
+    font-weight: 500;
+  }
+  
