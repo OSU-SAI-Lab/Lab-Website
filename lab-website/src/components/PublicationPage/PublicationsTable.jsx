@@ -1,4 +1,4 @@
-import publications from "../../assets/css/publications.css";
+import "../../assets/css/publications.css";
 
 function PublicationsTable({ data }) {
     return (
@@ -6,7 +6,6 @@ function PublicationsTable({ data }) {
         <thead>
           <tr>
             <th>Title</th>
-            <th>Cited by</th>
             <th>Year</th>
           </tr>
         </thead>
@@ -28,7 +27,7 @@ function PublicationsTable({ data }) {
                   {pub.venue}
                 </div>
               </td>
-              <td className="cited">{pub.citedBy}</td>
+              
               <td>{pub.year}</td>
             </tr>
           ))}
