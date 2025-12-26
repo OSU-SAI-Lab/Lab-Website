@@ -1,0 +1,14 @@
+.publication-filters {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding: 0 40px;
+      
+  }
+  
+  .publication-filters select,
+  .publication-filters input {
+    padding: 6px 10px;
+    font-size: 0.95rem;
+  }
+  
