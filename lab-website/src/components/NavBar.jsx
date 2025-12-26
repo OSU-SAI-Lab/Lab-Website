@@ -39,9 +39,9 @@ function NavBar() {
       fixed="top"
       className={`lab-navbar ${scrolled ? "scrolled" : ""}`}
     >
-      <Container>
+      <Container className="position-relative">
         {/* Brand */}
-        <Navbar.Brand as={NavLink} to="/">
+        <Navbar.Brand as={NavLink} to="/" className="navbar-brand-absolute">
           SAI Lab
         </Navbar.Brand>
 
@@ -57,7 +57,7 @@ function NavBar() {
             </Nav.Link>
 
             <Nav.Link as={NavLink} to="/news">
-              News
+              Events
             </Nav.Link>
 
             <Nav.Link as={NavLink} to="/people">
