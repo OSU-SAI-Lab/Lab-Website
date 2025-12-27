@@ -1,50 +1,129 @@
 /* Default: transparent on hero section */
 .lab-navbar {
-    background-color: transparent !important;
-    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
-    font-weight: 600;
-    position: fixed;
-    width: 100%;
-    z-index: 10;
-    backdrop-filter: none;
-  }
+  background-color: transparent !important;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+  font-weight: 600;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  backdrop-filter: none;
+  min-height: 56px;
+}
 
-  /* Position brand absolutely on the left so it doesn't affect centering */
-  .lab-navbar .navbar-brand-absolute {
-    position: absolute;
-    left: 1rem;
-    z-index: 1;
-  }
+/* Navbar container uses flexbox for proper layout */
+.lab-navbar .navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: nowrap;
+}
 
-  /* Center the nav items in the container */
-  .lab-navbar .container {
+/* Brand on the left */
+.lab-navbar .navbar-brand {
+  margin-right: 0;
+  flex-shrink: 0;
+}
+
+/* Toggle button on the right (mobile) */
+.lab-navbar .navbar-toggler {
+  order: 2;
+  margin-left: auto;
+  flex-shrink: 0;
+  border: none;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Navbar collapse container - only use flex when shown */
+.lab-navbar .navbar-collapse {
+  flex-grow: 1;
+  order: 1;
+}
+
+/* When collapse is shown (desktop or mobile open), use flex */
+.lab-navbar .navbar-collapse.show,
+.lab-navbar .navbar-collapse.collapsing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Desktop: always show and use flex */
+@media (min-width: 992px) {
+  .lab-navbar .navbar-collapse {
     display: flex;
     justify-content: center;
     align-items: center;
   }
+}
 
-  /* Ensure navbar collapse centers properly */
-  .lab-navbar .navbar-collapse {
-    flex-grow: 0;
+/* Center the nav items */
+.lab-navbar .navbar-nav-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+/* Text always white */
+.lab-navbar .navbar-brand,
+.lab-navbar .nav-link,
+.lab-navbar .navbar-toggler-icon {
+  color: white !important;
+}
+
+.lab-navbar .nav-link {
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+}
+
+/* After scroll: turn black with slight blur (modern UI) */
+.lab-navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  backdrop-filter: blur(6px);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 991.98px) {
+  .lab-navbar .navbar-container {
+    flex-wrap: wrap;
   }
 
-  /* Position toggle button absolutely on the right */
+  .lab-navbar .navbar-brand {
+    order: 1;
+  }
+
   .lab-navbar .navbar-toggler {
-    position: absolute;
-    right: 1rem;
-    z-index: 1;
+    order: 2;
   }
-  
-  /* Text always white */
-  .lab-navbar .navbar-brand,
-  .lab-navbar .nav-link,
-  .lab-navbar .navbar-toggler-icon {
-    color: white !important;
+
+  .lab-navbar .navbar-collapse {
+    order: 3;
+    width: 100%;
+    margin-top: 0.5rem;
+    display: none;
   }
-  
-  /* After scroll: turn black with slight blur (modern UI) */
-  .lab-navbar.scrolled {
-    background-color: rgba(0, 0, 0, 0.9) !important;
-    backdrop-filter: blur(6px);
+
+  /* When shown on mobile, use flex with column direction */
+  .lab-navbar .navbar-collapse.show {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
+
+  .lab-navbar .navbar-nav-center {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0;
+  }
+
+  .lab-navbar .nav-link {
+    width: 100%;
+    padding: 0.75rem 1rem;
+  }
+}
   
