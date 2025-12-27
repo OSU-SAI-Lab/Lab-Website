@@ -52,7 +52,7 @@ function NavBar() {
     <Navbar
       expand="lg"
       fixed="top"
-      className={`lab-navbar ${scrolled ? "scrolled" : ""}`}
+      className={`lab-navbar ${scrolled ? "scrolled" : ""} ${menuOpen ? "drawer-open" : ""}`}
     >
       <Container className="navbar-container">
         <Navbar.Brand as={NavLink} to="/" className="navbar-brand">

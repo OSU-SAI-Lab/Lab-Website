@@ -114,6 +114,13 @@
     align-items: flex-start;
   }
 
+  /* Black background when drawer is open on mobile */
+  .lab-navbar.drawer-open .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.95) !important;
+    padding: 1rem 0;
+    border-radius: 0;
+  }
+
   .lab-navbar .navbar-nav-center {
     flex-direction: column;
     align-items: flex-start;
