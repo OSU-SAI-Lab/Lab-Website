@@ -17,16 +17,18 @@ function PublicationsPage() {
     return publications.filter(pub => {
       const matchesYear =
         yearFilter === "all" || pub.year === Number(yearFilter);
-
+  
       const matchesAuthor =
         authorFilter.trim() === "" ||
-        pub.authors.some(author =>
-          author.toLowerCase().includes(authorFilter.toLowerCase())
-        );
-
+        pub.authors.some(author => {
+          const lastName = author.trim().split(" ").pop().toLowerCase();
+          return lastName.includes(authorFilter.toLowerCase());
+        });
+  
       return matchesYear && matchesAuthor;
     });
   }, [yearFilter, authorFilter]);
+  
 
   return (
     <>

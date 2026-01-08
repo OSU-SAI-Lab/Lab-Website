@@ -17,6 +17,25 @@
         "doi": "https://doi.org/xxxx",
         "scholar": "https://scholar.google.com/..."
       }
+    },
+    {
+      "id": "woundnet-few-shot-wound-healing-2023",
+      "title": "WoundNet: A Domain-Adaptable Few-Shot Classification Framework for Wound Healing Assessment",
+      "authors": [
+        "Anirudh Potlapally",
+        "H. Subramoni",
+        "M. Luo",
+        "M. Zhang",
+        "J. Huang",
+        "M. Wasi-ur-Rahman"
+      ],
+      "venue": "International Conference on Parallel Processing",
+      "year": 2011,
+      "links": {
+        "pdf": "https://example.com/paper.pdf",
+        "doi": "https://doi.org/xxxx",
+        "scholar": "https://scholar.google.com/..."
+      }
     }
   ]
   
