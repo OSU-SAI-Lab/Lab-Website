@@ -1,0 +1,55 @@
+.events-page {
+  padding: 60px 100px;
+}
+
+.events-hero {
+  margin-bottom: 40px;
+}
+
+.events-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.events-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.event-card {
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 20px;
+  background: #fff;
+}
+
+.event-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.event-meta,
+.event-datetime,
+.event-location {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 6px;
+}
+
+.event-description {
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+.event-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: #007bff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.event-link:hover {
+  text-decoration: underline;
+}
