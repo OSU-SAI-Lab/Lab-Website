@@ -56,13 +56,18 @@ function NavBar() {
               Publications
             </Nav.Link>
 
-            <Nav.Link as={NavLink} to="/news">
+            {/* <Nav.Link as={NavLink} to="/news">
               Events
-            </Nav.Link>
+            </Nav.Link> */}
 
             <Nav.Link as={NavLink} to="/people">
               People
             </Nav.Link>
+
+            <Nav.Link as={NavLink} to="/events">
+              Events
+            </Nav.Link>
+
 
            
 

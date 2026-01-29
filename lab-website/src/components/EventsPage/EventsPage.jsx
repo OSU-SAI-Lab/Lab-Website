@@ -1,9 +1,9 @@
-console.log("Events loaded:", events);
-
 import { events } from "./eventsData";
 import "./EventsPage.css";
 
 export default function EventsPage() {
+  console.log("Events loaded:", events);
+
   return (
     <div className="events-page">
       <section className="events-hero">
@@ -21,13 +21,28 @@ export default function EventsPage() {
             </p>
 
             <p className="event-datetime">
-              {event.date} · {event.time}
+              {event.date}
+              {event.time && ` · ${event.time}`}
             </p>
 
             <p className="event-location">{event.location}</p>
 
             <p className="event-description">{event.description}</p>
 
+            {/* Members involved */}
+            {event.members && (
+              <div className="event-members">
+                <strong>Lab Members Involved:</strong>
+                <ul>
+                  {event.members.map((m, idx) => (
+                    <li key={idx}>
+                      <a href={m.profileUrl}>{m.name}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {/* Article link */}
             {event.link && (
               <a
                 href={event.link}

@@ -3,35 +3,29 @@
 export const events = [
   {
     id: 1,
-    title: "Systems & AI Lab Research Talk",
-    type: "Talk",
-    date: "2024-10-15",
-    time: "3:00 PM – 4:00 PM",
+    title: "ICICLE Mentors High School Students for the Presidential AI Challenge",
+    type: "Outreach / Mentorship",
+    date: "2026-01",
+    time: null,
     mode: "In-Person",
-    location: "Dreese Labs 264",
-    description: "Guest talk on scalable machine learning systems.",
-    link: null
-  },
-  {
-    id: 2,
-    title: "AI Career Fair",
-    type: "Career Fair",
-    date: "2024-11-02",
-    time: "10:00 AM – 2:00 PM",
-    mode: "In-Person",
-    location: "Ohio Union",
-    description: "Meet industry professionals and recruiters.",
-    link: null
-  },
-  {
-    id: 3,
-    title: "NeurIPS 2024",
-    type: "Conference",
-    date: "2024-12-10",
-    time: "All Day",
-    mode: "Virtual",
-    location: "Online",
-    description: "Premier conference on machine learning and AI.",
-    link: "https://neurips.cc"
+    location: "The Ohio State University",
+    description:
+      "ICICLE researchers mentored high school students participating in the Presidential AI Challenge, guiding teams through problem formulation, ethical AI considerations, and solution development.",
+    link: "https://icicle.osu.edu/news/2026/01/icicle-mentors-high-school-students-presidential-ai-challenge",
+
+    members: [
+      {
+        name: "Mrunal Hole",
+        profileUrl: "https://www.linkedin.com/in/mrunalhole/"
+      },
+      {
+        name: "Naveen Kamath",
+        profileUrl: "https://kamaths.info"
+      },
+      {
+        name: "Rishi Makineni",
+        profileUrl: "https://www.linkedin.com/in/rishikesh-makineni/"
+      }
+    ]
   }
 ];

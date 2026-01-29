@@ -53,3 +53,25 @@
 .event-link:hover {
   text-decoration: underline;
 }
+
+.event-members {
+  margin-top: 0.75rem;
+}
+
+.event-members ul {
+  padding-left: 1rem;
+  margin: 0.25rem 0 0;
+}
+
+.event-members li {
+  margin-bottom: 0.25rem;
+}
+
+.event-members a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.event-members a:hover {
+  text-decoration: underline;
+}
