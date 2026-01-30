@@ -79,12 +79,29 @@ function NavBar() {
             <Nav.Link as={NavLink} to="/publications" onClick={handleNavLinkClick}>
               Publications
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/news" onClick={handleNavLinkClick}>
+
+            {/* <Nav.Link as={NavLink} to="/news">
               Events
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="/people" onClick={handleNavLinkClick}>
+            </Nav.Link> */}
+
+            <Nav.Link as={NavLink} to="/people">
               People
             </Nav.Link>
+
+            <Nav.Link as={NavLink} to="/events">
+              Events
+            </Nav.Link>
+
+
+           
+
+            {/*
+            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown.Item as={NavLink} to="/action1">
+                Action
+              </NavDropdown.Item>
+            </NavDropdown>
+            */}
           </Nav>
         </Navbar.Collapse>
       </Container>
