@@ -8,12 +8,15 @@ import "../assets/css/navbar.css";
 
 function NavBar() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     // Scroll to top when route changes
     window.scrollTo(0, 0);
+    // Close menu when route changes
+    setMenuOpen(false);
 
     // On non-homepage routes, always show solid navbar
     if (!isHomePage) {
@@ -31,28 +34,49 @@ function NavBar() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isHomePage]);
+  }, [isHomePage, location.pathname]);
+
+  const handleToggle = () => {
+    setMenuOpen(prev => !prev);
+  };
+
+  const handleCollapseToggle = (isOpen) => {
+    setMenuOpen(isOpen);
+  };
+
+  const handleNavLinkClick = () => {
+    setMenuOpen(false);
+  };
 
   return (
     <Navbar
       expand="lg"
       fixed="top"
-      className={`lab-navbar ${scrolled ? "scrolled" : ""}`}
+      className={`lab-navbar ${scrolled ? "scrolled" : ""} ${menuOpen ? "drawer-open" : ""}`}
     >
-      <Container className="position-relative">
-        {/* Brand */}
-        <Navbar.Brand as={NavLink} to="/" className="navbar-brand-absolute">
+      <Container className="navbar-container">
+        <Navbar.Brand as={NavLink} to="/" className="navbar-brand">
           SAI Lab
         </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mx-auto">
-            <Nav.Link as={NavLink} to="/research">
+        <Navbar.Toggle 
+          aria-controls="basic-navbar-nav" 
+          aria-expanded={menuOpen}
+          className="navbar-toggler"
+          onClick={handleToggle}
+        />
+
+        <Navbar.Collapse 
+          id="basic-navbar-nav" 
+          className="navbar-collapse"
+          in={menuOpen}
+          onToggle={handleCollapseToggle}
+        >
+          <Nav className="navbar-nav-center">
+            <Nav.Link as={NavLink} to="/research" onClick={handleNavLinkClick}>
               Research
             </Nav.Link>
-
-            <Nav.Link as={NavLink} to="/publications">
+            <Nav.Link as={NavLink} to="/publications" onClick={handleNavLinkClick}>
               Publications
             </Nav.Link>
 

@@ -1,22 +1,20 @@
 [
     {
-      "id": "memcached-rdma-2011",
-      "title": "Memcached design on high performance RDMA capable interconnects",
+      "title": "Instance segmentation in remote sensing imagery using deep convolutional neural networks",
       "authors": [
-        "J. Jose",
-        "H. Subramoni",
-        "M. Luo",
-        "M. Zhang",
-        "J. Huang",
-        "M. Wasi-ur-Rahman"
+        "Anirudh Potlapally",
+        "Potluri Sai Rohit Chowdary",
+        "SS Raja Shekhar",
+        "Nitin Mishra",
+        "Chella Sri",
+        "Venkata Divya Madhuri",
+        "AVV Prasad"
       ],
-      "venue": "International Conference on Parallel Processing",
-      "year": 2011,
-      "links": {
-        "pdf": "https://example.com/paper.pdf",
-        "doi": "https://doi.org/xxxx",
-        "scholar": "https://scholar.google.com/..."
-      }
+      "venue": "2019 International Conference on contemporary Computing and Informatics (IC3I)",
+      "year": 2019,
+      "link": "https://ieeexplore.ieee.org/abstract/document/9055569",
+      "publisher": "IEEE",
+      "description": "Over the past few years, remote sensing has found applications in various fields such as hydrology, geology, glaciology, military, agriculture, etc. The advancement in satellite and sensor technology enabled users to work with large amount of high resolution data of obtained from multiple sensors. This large availability of data is efficiently exploited by employing deep neural networks in tasks ranging from image preprocessing and target recognition to high-level semantic feature extraction and object recognition. The present work involves creation of a model to perform instance segmentation in a wide variety of aerial imagery using Mask R-CNN, a state of art method for object localization, multi-class classification and segmentation. The results obtained from this work helped in further advancement of automation in analysis of data pertaining to Land Use & Land Cover (LULC) and other earth science disciplines."
     }
   ]
   
