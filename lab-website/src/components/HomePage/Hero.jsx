@@ -13,10 +13,10 @@ function Hero() {
           Advancing machine learning, distributed systems, and intelligent computation.
         </p> */}
 
-        <div className="hero-buttons">
+        {/* <div className="hero-buttons">
           <button className="hero-btn">Learn More</button>
           <button className="hero-btn-outline">Our Research</button>
-        </div>
+        </div> */}
       </Container>
     </header>
   );
