@@ -259,9 +259,9 @@ export const labMembers = [
     website: "https://kamaths.info",
     email: "kamath.62@osu.edu",
     interests: [
-      "High-Performance Computing",
-      "Edge Computing",
-      "Deep Learning"
+      "Computer Vision",
+      "Deep Learning",
+      "UI/UX"
     ],
     projects: [
       "Mentoring Columbus School for Girls in Presidential AI Challenge",
