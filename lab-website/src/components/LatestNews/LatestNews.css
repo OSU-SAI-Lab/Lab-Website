@@ -1,5 +1,18 @@
 .events-page {
   padding: 60px 100px;
+  min-height: 100vh;
+  
+  /* Matches your working .hero pathing */
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.96)), 
+    url("../backgrounds/polygon-scatter-haikei.svg");
+    
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Keeps it professional as you scroll */
+  
+  background-color: #ffffff; 
 }
 
 .events-hero {
@@ -8,70 +21,60 @@
 
 .events-hero h1 {
   font-size: 2.5rem;
+  font-weight: 700;
   margin-bottom: 10px;
+  color: #222;
+}
+
+.latest-news-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+  color: #000;
 }
 
 .events-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 25px;
+  gap: 30px;
 }
 
 .event-card {
-  border: 1px solid #e5e5e5;
-  border-radius: 10px;
-  padding: 20px;
-  background: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 24px;
+  background: #ffffff; /* Card stays solid white */
+  
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07), 
+              0 4px 6px rgba(0, 0, 0, 0.04);
+  
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              box-shadow 0.3s ease;
 }
 
-.event-title {
-  font-size: 1.2rem;
-  font-weight: 600;
+.event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
-.event-meta,
-.event-datetime,
-.event-location {
-  font-size: 0.9rem;
-  color: #555;
-  margin-top: 6px;
-}
-
-.event-description {
-  margin-top: 10px;
-  font-size: 0.95rem;
-}
+/* ... keep the rest of your event-title and member styles ... */
 
 .event-link {
   display: inline-block;
-  margin-top: 12px;
-  color: #007bff;
-  font-weight: 600;
+  margin-top: 15px;
+  color: #bb0000;
+  font-weight: 700;
   text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
 }
 
-.event-link:hover {
-  text-decoration: underline;
-}
-
-.event-members {
-  margin-top: 0.75rem;
-}
-
-.event-members ul {
-  padding-left: 1rem;
-  margin: 0.25rem 0 0;
-}
-
-.event-members li {
-  margin-bottom: 0.25rem;
-}
-
-.event-members a {
-  color: var(--color-primary);
-  text-decoration: none;
-}
-
-.event-members a:hover {
-  text-decoration: underline;
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .events-page {
+    padding: 40px 20px;
+    /* Often better to disable fixed background on mobile for performance */
+    background-attachment: scroll; 
+  }
 }

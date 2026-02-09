@@ -1,5 +1,5 @@
 import { events } from "./eventsData";
-import "./LatestNews.css";
+// import "./LatestNews.css";
 import "../../assets/css/latestnews.css"
 
 export default function LatestNews() {
