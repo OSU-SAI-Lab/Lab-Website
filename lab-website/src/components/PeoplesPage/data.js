@@ -6,7 +6,7 @@ export const labMembers = [
     role: "faculty",
     title: "Assistant Professor",
     department: "Computer Science and Engineering",
-    photo: "/profilepics/Hari.png",
+    photo: "./profilepics/Hari.png",
     location: "Dreese Labs 395",
     website: "https://cse.osu.edu/people/subramoni.1",
     email: "subramoni.1@osu.edu",
@@ -34,7 +34,7 @@ export const labMembers = [
     role: "phd",
     title: "PhD Student",
     department: "Computer Science and Engineering",
-    photo: "Aswath.jpeg",
+    photo: "./profilepics/Aswath.jpeg",
     location: "Dreese Labs 480",
     website: "https://www.linkedin.com/in/radhakrishnan97/",
     email: "radhakrishnan.39@buckeyemail.osu.edu",
@@ -79,7 +79,7 @@ export const labMembers = [
     role: "phd",
     title: "PhD Student",
     department: "Computer Science and Engineering",
-    photo: "/profilepics/Satyaki.jpeg",
+    photo: "./profilepics/Satyaki.jpeg",
     location: "Dreese Labs 481",
     website: "https://satyakiroy10.github.io",
     email: "chowdhury.207@osu.edu",
@@ -103,18 +103,19 @@ export const labMembers = [
     role: "masters",
     title: "Graduate Student",
     department: "Computer Science and Engineering",
-    photo: "https://via.placeholder.com/300x300?text=Grad+Student+1",
+    photo: "./profilepics/Pratham.jpeg",
     location: "Dreese Labs 482",
     website: "https://www.linkedin.com/in/prathamsharma22/",
-    email: "grad1@osu.edu",
+    email: "sharma.1460@buckeyemail.osu.edu",
     interests: [
       "Machine Learning",
-      "Data Science",
-      "Computer Vision"
+      "Deep Learning",
+      "Computer Vision",
+      "Artificial Intelligence"
     ],
     projects: [
-      "Image Classification",
-      "Data Analysis Pipeline"
+      "- AI enabled fault detection in welding industry.",
+      "- RAG based chatbot for agricultural use case."
     ],
     publications: null // Optional field
   },
@@ -124,18 +125,15 @@ export const labMembers = [
     role: "masters",
     title: "Graduate Student",
     department: "Computer Science and Engineering",
-    photo: "https://via.placeholder.com/300x300?text=Grad+Student+2",
+    photo: "./profilepics/Brijesh.JPG",
     location: "Dreese Labs 482",
-    website: "https://www.linkedin.com/in/brijesh-nanda-b-y/",
-    email: "grad2@osu.edu",
+    website: "https://brijesh-nanda-by.github.io/Portfolio/",
+    email: "brundayogananda.1@buckeyemail.osu.edu",
     interests: [
-      "Reinforcement Learning",
-      "Robotics",
-      "Control Systems"
+      "Computer Vision - Object detection and Auto-Labelling"
     ],
     projects: [
-      "Robot Navigation",
-      "RL for Autonomous Systems"
+      "Advanced Object Detection Pipeline capable of Zero-Shot and Few-Shot annotation using Foundation Models like SAM3. The system supports multi-modal inputs—including segmentation-assisted and text-prompt based detection—and features a visual optimization suite. This allows users to interactively fine-tune critical hyperparameters, such as patch sizes and confidence thresholds, using real-time graphical feedback to ensure annotation precision."
     ],
     publications: null
   },
@@ -145,7 +143,7 @@ export const labMembers = [
     role: "masters",
     title: "Graduate Student",
     department: "Computer Science and Engineering",
-    photo: "/profilepics/Harikesh.jpg",
+    photo: "./profilepics/Harikesh.jpg",
     location: "Dreese Labs 483",
     email: "byrandurgagopinath.1@buckeyemail.osu.edu",
     website: "https://www.linkedin.com/in/harikesh-gopinath",
@@ -168,7 +166,7 @@ export const labMembers = [
     role: "masters",
     title: "Graduate Student",
     department: "Computer Science and Engineering",
-    photo: "profilepics/prof_parth.png",
+    photo: "./profilepics/prof_parth.png",
     location: "Dreese Labs 483",
     email: "gupta.1543@osu.edu",
     website: "https://www.linkedin.com/in/parth-gupta-7a1685196/",
@@ -190,15 +188,15 @@ export const labMembers = [
     department: "Computer Science and Engineering",
     photo: "https://via.placeholder.com/300x300?text=Grad+Student+5",
     location: "Dreese Labs 484",
-    email: "shiradanahallimahadevappa.1@buckeyemail.osu.edu",
-    website: "https://www.linkedin.com/in/yathish017/",
+    email: "shiradanahallimahadevappa.1@osu.edu",
+    website: "http://www.linkedin.com/in/yathish-mahadevappa-171645240",
     interests: [
-      "Cybersecurity",
-      "Network Security",
-      "Cryptography"
+      "Computer Vision",
+      "Deep Learning",
+      "Machine Learning"
     ],
     projects: [
-      "Secure Communication Protocols"
+      "Vision-Based Pipeline for Accurate Corn Residue Cover and Soil Aggregate size Estimation in Agricultural Fields."
     ],
     publications: null
   },
@@ -208,7 +206,7 @@ export const labMembers = [
     role: "masters",
     title: "Graduate Student",
     department: "Computer Science and Engineering",
-    photo: "/profilepics/khush.png",
+    photo: "./profilepics/khush.png",
     location: "Dreese Labs 484",
     email: "mundada.10@osu.edu",
     website: "https://www.linkedin.com/in/khushboo10/",
@@ -229,7 +227,7 @@ export const labMembers = [
     role: "masters",
     title: "Graduate Student",
     department: "Computer Science and Engineering",
-    photo: "/profilepics/Mrunal.png",
+    photo: "./profilepics/Mrunal.png",
     location: "Dreese Labs 485",
     email: "hole.17@osu.edu",
     website: "https://www.linkedin.com/in/mrunalhole/",
@@ -254,7 +252,7 @@ export const labMembers = [
     role: "undergraduate",
     title: "Undergraduate Research Assistant",
     department: "Computer Science and Engineering",
-    photo: "/profilepics/Naveens_Headshot.jpg",
+    photo: "./profilepics/Naveens_Headshot.jpg",
     location: "Dreese Labs 486",
     website: "https://kamaths.info",
     email: "kamath.62@osu.edu",
@@ -289,24 +287,24 @@ export const labMembers = [
     ],
     publications: null
   },
-  {
-    id: 14,
-    name: "Sahas Uppalapati",
-    role: "undergraduate",
-    title: "Undergraduate Research Assistant",
-    department: "Computer Science and Engineering",
-    photo: "https://via.placeholder.com/300x300?text=Undergrad+3",
-    location: "Dreese Labs 487",
-    email: "undergrad3@osu.edu",
-    interests: [
-      "Python Programming",
-      "Data Analysis",
-      "Scientific Computing"
-    ],
-    projects: [
-      "Data Processing Pipeline",
-      "Experiment Automation"
-    ],
-    publications: null
-  }
+  // {
+  //   id: 14,
+  //   name: "Sahas Uppalapati",
+  //   role: "undergraduate",
+  //   title: "Undergraduate Research Assistant",
+  //   department: "Computer Science and Engineering",
+  //   photo: "https://via.placeholder.com/300x300?text=Undergrad+3",
+  //   location: "Dreese Labs 487",
+  //   email: "undergrad3@osu.edu",
+  //   interests: [
+  //     "Python Programming",
+  //     "Data Analysis",
+  //     "Scientific Computing"
+  //   ],
+  //   projects: [
+  //     "Data Processing Pipeline",
+  //     "Experiment Automation"
+  //   ],
+  //   publications: null
+  // }
 ];
