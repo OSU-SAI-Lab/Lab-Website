@@ -1,8 +1,8 @@
 import { events } from "./eventsData";
-import "./EventsPage.css";
+import "./LatestNews.css";
 import "../../assets/css/latestnews.css"
 
-export default function EventsPage() {
+export default function LatestNews() {
   console.log("Events loaded:", events);
 
   return (

@@ -1,13 +1,12 @@
 import Hero from "./Hero";
-import LatestNews from "./LatestNews";
-import EventsPage from "../EventsPage/EventsPage";
+import LatestNews from "../LatestNews/LatestNews.jsx";
 
 function HomePage() {
 
     return(
         <>
         <Hero />
-        <EventsPage/>
+        <LatestNews/>
         </>
     );
 }
