@@ -1,15 +1,18 @@
 import { events } from "./eventsData";
 import "./EventsPage.css";
+import "../../assets/css/latestnews.css"
 
 export default function EventsPage() {
   console.log("Events loaded:", events);
 
   return (
     <div className="events-page">
-      <section className="events-hero">
+      {/* <section className="events-hero">
         <h1>Events</h1>
         <p>Talks, conferences, and career opportunities</p>
-      </section>
+      </section> */}
+
+      <h2 className="latest-news-title">Latest News</h2>
 
       <div className="events-container">
         {events.map(event => (
