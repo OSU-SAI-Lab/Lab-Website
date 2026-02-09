@@ -88,9 +88,9 @@ function NavBar() {
               People
             </Nav.Link>
 
-            <Nav.Link as={NavLink} to="/events">
-              Events
-            </Nav.Link>
+            {/* <Nav.Link as={NavLink} to="/events">
+              Awards
+            </Nav.Link> */}
 
 
            
