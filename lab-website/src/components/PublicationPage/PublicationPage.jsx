@@ -18,16 +18,13 @@ export default function PublicationsPage() {
 
   const filtered = useMemo(() => {
     return rows.filter((r) => {
-      // Clean up the type from CSV to remove hidden spaces/newlines
       const rowType = r.type?.trim();
       
-      // Logic to bridge singular CSV data with plural sidebar labels
       if (activeCategory === "Journals") return rowType === "Journal" || rowType === "Journals";
       if (activeCategory === "Books") return rowType === "Book" || rowType === "Books";
       if (activeCategory === "Conferences & Workshops") return rowType === "Conference" || rowType === "Conferences & Workshops";
       if (activeCategory === "Technical Reports") return rowType === "Technical Report" || rowType === "Technical Reports";
       
-      // Default for exact matches (like Theses or Dissertations)
       return rowType === activeCategory;
     }).sort((a, b) => b.year - a.year);
   }, [rows, activeCategory]);
@@ -35,78 +32,137 @@ export default function PublicationsPage() {
   if (loading) return <div style={{ padding: 20 }}>Loading...</div>;
 
   return (
-    <div style={{ display: "flex", fontFamily: "sans-serif", padding: "20px", gap: "40px" }}>
-      {/* Sidebar */}
-      <div style={{ width: "220px", flexShrink: 0 }}>
-        {categories.map((cat) => (
-          <div
-            key={cat}
-            onClick={() => setActiveCategory(cat)}
-            style={{
-              padding: "12px 15px",
-              border: "1px solid #ddd",
-              marginBottom: "-1px",
-              cursor: "pointer",
-              backgroundColor: activeCategory === cat ? "#f4f4f4" : "white",
-              fontWeight: activeCategory === cat ? "bold" : "normal",
-              fontSize: "14px",
-              color: "#333",
-              borderLeft: activeCategory === cat ? "4px solid #337ab7" : "1px solid #ddd",
-              transition: "all 0.2s"
-            }}
-          >
-            {cat}
-          </div>
-        ))}
-      </div>
+    <>
+      <style>{`
+        .pub-container {
+          display: flex;
+          font-family: sans-serif;
+          padding: 20px;
+          gap: 40px;
+          flex-direction: row;
+        }
 
-      {/* Main Content */}
-      <div style={{ flexGrow: 1 }}>
-        <h2 style={{ borderBottom: "2px solid #337ab7", paddingBottom: "10px", color: "#333" }}>
-          {activeCategory} ({filtered.length})
-        </h2>
-        
-        <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "10px" }}>
-          <tbody>
-            {filtered.map((pub, index) => (
-              <tr key={pub.id} style={{ borderBottom: "1px solid #eee" }}>
-                <td style={{ padding: "15px 10px", verticalAlign: "top", width: "30px", color: "#999", fontSize: "13px" }}>
-                  {index + 1}
-                </td>
-                <td style={{ padding: "15px 10px", fontSize: "14px", lineHeight: "1.6" }}>
-                  <div style={{ color: "#337ab7", marginBottom: "4px" }}>
-                    {pub.authorsArr.map((auth, i) => (
-                      <React.Fragment key={i}>
-                        {auth.toLowerCase().includes("subramoni") ? <strong>{auth}</strong> : auth}
-                        {i < pub.authorsArr.length - 1 ? ", " : ""}
-                      </React.Fragment>
-                    ))}
-                  </div>
-                  <strong>{pub.title}</strong>, {pub.venue}, {pub.year}.
-                  {pub.link && (
-                    <div style={{ marginTop: "8px" }}>
-                      <a 
-                        href={pub.link} 
-                        target="_blank" 
-                        rel="noreferrer" 
-                        style={{ color: "#337ab7", textDecoration: "none", fontSize: "12px", fontWeight: "bold" }}
-                      >
-                        [Full Text]
-                      </a>
+        .pub-sidebar {
+          width: 220px;
+          flex-shrink: 0;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .pub-sidebar-item {
+          padding: 12px 15px;
+          border: 1px solid #ddd;
+          margin-bottom: -1px;
+          cursor: pointer;
+          font-size: 14px;
+          color: #333;
+          transition: all 0.2s;
+        }
+
+        /* Mobile View Styles */
+        @media (max-width: 768px) {
+          .pub-container {
+            flex-direction: column;
+            gap: 20px;
+            padding: 10px;
+          }
+
+          .pub-sidebar {
+            width: 100%;
+            flex-direction: row;
+            overflow-x: auto; /* Allows horizontal scrolling of menu on small screens */
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 5px;
+          }
+
+          .pub-sidebar-item {
+            margin-bottom: 0;
+            margin-right: -1px;
+            flex: 0 0 auto;
+            border-left: 1px solid #ddd !important; /* Override desktop highlight style */
+            border-bottom: 3px solid transparent;
+          }
+
+          .active-mobile-tab {
+            border-bottom: 3px solid #337ab7 !important;
+            background-color: #f4f4f4;
+            font-weight: bold;
+          }
+        }
+      `}</style>
+
+      <div className="pub-container">
+        {/* Navigation Menu */}
+        <div className="pub-sidebar">
+          {categories.map((cat) => {
+            const isActive = activeCategory === cat;
+            return (
+              <div
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`pub-sidebar-item ${isActive ? "active-mobile-tab" : ""}`}
+                style={{
+                  backgroundColor: isActive ? "#f4f4f4" : "white",
+                  fontWeight: isActive ? "bold" : "normal",
+                  // Desktop-only left border highlight
+                  borderLeft: isActive ? "4px solid #337ab7" : "1px solid #ddd",
+                }}
+              >
+                {cat}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Main Content */}
+        <div style={{ flexGrow: 1 }}>
+          <h2 style={{ borderBottom: "2px solid #337ab7", paddingBottom: "10px", color: "#333" }}>
+            {activeCategory} ({filtered.length})
+          </h2>
+          
+          <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "10px" }}>
+            <tbody>
+              {filtered.map((pub, index) => (
+                <tr key={pub.id} style={{ borderBottom: "1px solid #eee" }}>
+                  <td style={{ padding: "15px 10px", verticalAlign: "top", width: "30px", color: "#999", fontSize: "13px" }}>
+                    {index + 1}
+                  </td>
+                  <td style={{ padding: "15px 10px", fontSize: "14px", lineHeight: "1.6" }}>
+                    <div style={{ color: "#337ab7", marginBottom: "4px" }}>
+                      {pub.authorsArr.map((auth, i) => (
+                        <React.Fragment key={i}>
+                          {auth.toLowerCase().includes("subramoni") ? <strong>{auth}</strong> : auth}
+                          {i < pub.authorsArr.length - 1 ? ", " : ""}
+                        </React.Fragment>
+                      ))}
                     </div>
-                  )}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        
-        {filtered.length === 0 && (
-          <p style={{ color: "#999", marginTop: "20px", textAlign: "center" }}>
-            No publications found in this category.
-          </p>
-        )}
+                    <strong>{pub.title}</strong>, {pub.venue}, {pub.year}.
+                    {pub.link && (
+                      <div style={{ marginTop: "8px" }}>
+                        <a 
+                          href={pub.link} 
+                          target="_blank" 
+                          rel="noreferrer" 
+                          style={{ color: "#337ab7", textDecoration: "none", fontSize: "12px", fontWeight: "bold" }}
+                        >
+                          [Full Text]
+                        </a>
+                      </div>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          
+          {filtered.length === 0 && (
+            <p style={{ color: "#999", marginTop: "20px", textAlign: "center" }}>
+              No publications found in this category.
+            </p>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
