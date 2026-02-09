@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { useOutletContext } from "react-router-dom";
-
+import Footer from "../Footer"
 export default function PublicationsPage() {
   const { rows, loading } = useOutletContext();
   const [activeCategory, setActiveCategory] = useState("Journals");
@@ -162,7 +162,9 @@ export default function PublicationsPage() {
             </p>
           )}
         </div>
+        
       </div>
+      <Footer/>
     </>
   );
 }
