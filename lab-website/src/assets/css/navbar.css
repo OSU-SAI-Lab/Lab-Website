@@ -32,6 +32,13 @@
   flex-shrink: 0;
   border: none;
   padding: 0.25rem 0.5rem;
+  filter: invert(1);
+}
+
+/* Remove focus glow on toggler */
+.lab-navbar .navbar-toggler:focus {
+  box-shadow: none;
+  outline: none;
 }
 
 /* Navbar collapse container - only use flex when shown */
@@ -114,9 +121,15 @@
     align-items: flex-start;
   }
 
-  /* Black background when drawer is open on mobile */
-  .lab-navbar.drawer-open .navbar-collapse {
+  /* NEW: Background applied to the WHOLE navbar when drawer is open */
+  .lab-navbar.drawer-open {
     background-color: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(6px);
+  }
+
+  /* Updated: Collapse itself is now transparent so the parent background shows through */
+  .lab-navbar.drawer-open .navbar-collapse {
+    background-color: transparent !important;
     padding: 1rem 0;
     border-radius: 0;
   }
@@ -133,4 +146,3 @@
     padding: 0.75rem 1rem;
   }
 }
-  
