@@ -1,0 +1,41 @@
+/* Import distinctive fonts */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+/* CSS Variables for consistent theming across the entire site */
+:root {
+  --color-primary: #bb0000;
+  --color-primary-dark: #8b0000;
+  --color-text: #1a1a1a;
+  --color-text-light: #666;
+  --color-text-lighter: #999;
+  --color-bg: #fafafa;
+  --color-card-bg: #ffffff;
+  --color-border: #e5e5e5;
+  --color-accent: #2c5f2d;
+  
+  --font-serif: 'Crimson Pro', serif;
+  --font-sans: 'IBM Plex Sans', sans-serif;
+  
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 24px rgba(0,0,0,0.12);
+  
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

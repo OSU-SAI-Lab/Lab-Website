@@ -1,7 +1,8 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import HomePage from "./components/HomePage/HomePage";
-import TempComponent from "./components/PublicationPage/TempComponents";
+import ResearchPage from "./components/ResearchPage/ResearchPage";
+import ProjectDetail from "./components/ResearchPage/ProjectDetail";
 import PublicationsLayout from "./components/PublicationPage/PublicationsLayout";
 import PublicationsPage from "./components/PublicationPage/PublicationPage";
 import People from "./components/PeoplesPage/PeoplesPage";
@@ -18,7 +19,8 @@ function App() {
       <div className={isHomePage ? "" : "page-content"}>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/research" element={<TempComponent />} />
+          <Route path="/research" element={<ResearchPage />} />
+          <Route path="/research/:slug" element={<ProjectDetail />} />
 
           <Route path="/people" element={<People />} />
 
