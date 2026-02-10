@@ -5,6 +5,8 @@ import TempComponent from "./components/PublicationPage/TempComponents";
 import PublicationsLayout from "./components/PublicationPage/PublicationsLayout";
 import PublicationsPage from "./components/PublicationPage/PublicationPage";
 import People from "./components/PeoplesPage/PeoplesPage";
+import WorkingWithUs from "./components/WorkingWithUs/workingwithus";  
+
 
 import "./App.css";
 
@@ -26,6 +28,9 @@ function App() {
           <Route path="/publications" element={<PublicationsLayout />}>
             <Route index element={<PublicationsPage />} />
           </Route>
+          
+          <Route path="/workingwithus" element={<WorkingWithUs />} />
+
         </Routes>
       </div>
     </>

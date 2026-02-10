@@ -93,7 +93,10 @@ function NavBar() {
             </Nav.Link> */}
 
 
-           
+           <Nav.Link as={NavLink} to="/workingwithus" onClick={handleNavLinkClick}>
+            Working With Us
+          </Nav.Link>
+
 
             {/*
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">

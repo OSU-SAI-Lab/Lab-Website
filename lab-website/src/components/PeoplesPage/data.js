@@ -28,8 +28,33 @@ export const labMembers = [
   },
 
   // PHD STUDENTS
+  
   {
     id: 2,
+    name: "Anirudh Potlapally",
+    role: "phd",
+    title: "PhD Student",
+    department: "Computer Science and Engineering",
+    photo: "./profilepics/Anirudh.jpg",
+    location: "Dreese Labs 480",
+    website: "https://www.linkedin.com/in/anirudh-potlapally-30659a1ab/",
+    email: "potlapally.2@buckeyemail.osu.edu",
+    interests: [
+      "High-Performance Computing for AI",
+      "ML Systems",
+      "Multimodal Foundation Models",
+      "Efficient Inference",
+      "AI for Science"
+    ],
+    projects: [
+      "Distributed ML Training",
+      "Cloud Resource Management"
+    ],
+    publications: "https://scholar.google.com/citations?user=izzBqmcAAAAJ&hl=en"
+  },
+
+  {
+    id: 3,
     name: "Aswathnarayan Radhakrishnan",
     role: "phd",
     title: "PhD Student",
@@ -51,27 +76,6 @@ export const labMembers = [
       "Geospatial RAG and Policy Regime Geodatabase Harmonization"
     ],
     publications: "https://scholar.google.com/citations?user=A-SUUsoAAAAJ&hl=en"
-  },
-  {
-    id: 3,
-    name: "Anirudh Potlapally",
-    role: "phd",
-    title: "PhD Student",
-    department: "Computer Science and Engineering",
-    photo: "https://via.placeholder.com/300x300?text=PhD+Student+2",
-    location: "Dreese Labs 480",
-    website: "https://www.linkedin.com/in/anirudh-potlapally-30659a1ab/",
-    email: "potlapally.2@buckeyemail.osu.edu",
-    interests: [
-      "Distributed Systems",
-      "Cloud Computing",
-      "Systems Programming"
-    ],
-    projects: [
-      "Distributed ML Training",
-      "Cloud Resource Management"
-    ],
-    publications: "https://scholar.google.com/citations?user=izzBqmcAAAAJ&hl=en"
   },
   {
     id: 4,
@@ -193,7 +197,8 @@ export const labMembers = [
     interests: [
       "Computer Vision",
       "Deep Learning",
-      "Machine Learning"
+      "Machine Learning",
+      "Digital Agriculture"
     ],
     projects: [
       "Vision-Based Pipeline for Accurate Corn Residue Cover and Soil Aggregate size Estimation in Agricultural Fields."
