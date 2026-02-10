@@ -213,10 +213,10 @@ function PersonCard({ member }) {
       <h3 className="person-name">{member.name}</h3>
       <p className="person-title">{member.title}</p>
 
-      {/* Location */}
+      {/* Location
       {member.location && (
         <p className="person-location">{member.location}</p>
-      )}
+      )} */}
 
       {/* Interests */}
       <div className="interests-tags">
@@ -224,6 +224,21 @@ function PersonCard({ member }) {
           <span key={idx} className="interest-tag">{i}</span>
         ))}
       </div>
+      <div className="interests-section">
+        {/* Research interests here */}
+      </div>
+
+     {/* Projects Section */}
+      {member.projects && member.projects.length > 0 && (
+        <div className="projects-section">
+          <h4 className="section-label">Current Projects</h4>
+          <ul className="projects-list">
+            {member.projects.map((project, idx) => (
+              <li key={idx}>{project}</li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       {/* Links */}
     <div className="card-links">
