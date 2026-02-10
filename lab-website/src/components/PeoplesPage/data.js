@@ -264,7 +264,7 @@ export const labMembers = [
     interests: [
       "Computer Vision",
       "Deep Learning",
-      "UI/UX"
+      "Cloud Computing"
     ],
     projects: [
       "Mentoring Columbus School for Girls in Presidential AI Challenge",

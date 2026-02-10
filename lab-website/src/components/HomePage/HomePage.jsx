@@ -1,5 +1,6 @@
 import Hero from "./Hero";
 import LatestNews from "../LatestNews/LatestNews.jsx";
+import Footer from "../Footer.jsx";
 
 function HomePage() {
 
@@ -7,6 +8,7 @@ function HomePage() {
         <>
         <Hero />
         <LatestNews/>
+        <Footer/>
         </>
     );
 }

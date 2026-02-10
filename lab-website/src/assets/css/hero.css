@@ -37,15 +37,21 @@
   }
   
   .hero-title {
-    font-size: 3.5rem;
-    font-weight: 700;
+    font-size: 4rem; /* Slightly larger */
+    font-weight: 800;
+    letter-spacing: 2px;
     margin-bottom: 0.5rem;
+    color: white;
+    /* Deep, soft shadow for depth without the 'fuzzy' glow look */
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
   }
   
   .hero-subtitle {
-    font-size: 1.5rem;
-    opacity: 0.9;
-    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 4px; /* Makes 'The Ohio State University' look very official */
+    opacity: 0.85;
   }
   
   .hero-tagline {
@@ -93,3 +99,79 @@
     color: black;
   }
   
+/* Mobile adjustments for the Hero section */
+@media (max-width: 768px) {
+  /* Force a solid black navbar on mobile home page */
+  .lab-navbar {
+    background-color: rgb(0, 0, 0) !important;
+    backdrop-filter: none !important;
+  }
+
+  .hero {
+    height: 40vh;
+    padding-top: 0; /* Removed padding to allow flex centering to work */
+    
+    /* Remove SVG but keep the dark base color */
+    background-image: none !important; 
+    background-color: #5a1a1a; 
+
+    /* Stop the container from flipping */
+    transform: none !important; 
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-content {
+    /* Reset the text flip - THIS IS THE KEY FIX */
+    transform: none !important; 
+    
+    /* Offset for the navbar height so content looks visually centered */
+    margin-top: 60px; 
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Keep the overlay active for the linear gradient effect */
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0) 40%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+    /* Ensure the overlay doesn't flip either */
+    transform: none !important;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    padding: 0 1rem;
+    margin-bottom: 0.5rem;
+    /* Added subtle shadow to pop against solid background */
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem; /* Slightly smaller for better mobile fit */
+    letter-spacing: 2px;
+    margin-top: 0.5rem;
+    opacity: 0.9;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .hero-btn, .hero-btn-outline {
+    width: 80%;
+    padding: 0.6rem 1.2rem;
+  }
+}
