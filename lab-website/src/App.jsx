@@ -10,6 +10,7 @@ import WorkingWithUs from "./components/WorkingWithUs/workingwithus";
 
 
 import "./App.css";
+import OSUEventPage from "./components/EventsTab/EventsTab";
 
 function App() {
   const location = useLocation();
@@ -32,6 +33,8 @@ function App() {
           </Route>
           
           <Route path="/workingwithus" element={<WorkingWithUs />} />
+
+          <Route path="/events" element={<OSUEventPage />} />
 
         </Routes>
       </div>
