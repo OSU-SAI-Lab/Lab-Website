@@ -4,30 +4,41 @@ import Footer from "../Footer"
 export default function PublicationsPage() {
   const { rows, loading } = useOutletContext();
   const [activeCategory, setActiveCategory] = useState("Journals");
+  const [selectedYear, setSelectedYear] = useState("All");
+
+  const years = useMemo(() => {
+    const allYears = rows.flatMap(r => r.year ? [r.year] : []);
+    return [...new Set(allYears)].sort((a, b) => b - a);
+  }, [rows]);
 
   const categories = [
-    "Books", 
-    "Journals", 
-    "Book Chapters", 
-    "Conferences & Workshops", 
-    "Technical Reports", 
-    "Ph.D. Dissertations", 
-    "M.S. Theses", 
+    "Books",
+    "Journals",
+    "Book Chapters",
+    "Conferences & Workshops",
+    "Technical Reports",
+    "Ph.D. Dissertations",
+    "M.S. Theses",
     "B.S. Theses"
   ];
 
   const filtered = useMemo(() => {
     return rows.filter((r) => {
       const rowType = r.type?.trim();
-      
+      const rowYear = r.year;
+
+      if (selectedYear !== "All" && String(rowYear) !== String(selectedYear)) {
+        return false;
+      }
+
       if (activeCategory === "Journals") return rowType === "Journal" || rowType === "Journals";
       if (activeCategory === "Books") return rowType === "Book" || rowType === "Books";
       if (activeCategory === "Conferences & Workshops") return rowType === "Conference" || rowType === "Conferences & Workshops";
       if (activeCategory === "Technical Reports") return rowType === "Technical Report" || rowType === "Technical Reports";
-      
+
       return rowType === activeCategory;
     }).sort((a, b) => b.year - a.year);
-  }, [rows, activeCategory]);
+  }, [rows, activeCategory, selectedYear]);
 
   if (loading) return <div style={{ padding: 20 }}>Loading...</div>;
 
@@ -117,10 +128,29 @@ export default function PublicationsPage() {
 
         {/* Main Content */}
         <div style={{ flexGrow: 1 }}>
-          <h2 style={{ borderBottom: "2px solid #337ab7", paddingBottom: "10px", color: "#333" }}>
-            {activeCategory} ({filtered.length})
-          </h2>
-          
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "2px solid #337ab7", paddingBottom: "10px", marginBottom: "10px" }}>
+            <h2 style={{ margin: 0, color: "#333" }}>
+              {activeCategory} ({filtered.length})
+            </h2>
+            <select
+              value={selectedYear}
+              onChange={(e) => setSelectedYear(e.target.value)}
+              style={{
+                padding: "5px 10px",
+                fontSize: "14px",
+                borderRadius: "4px",
+                border: "1px solid #ddd",
+                outline: "none",
+                cursor: "pointer"
+              }}
+            >
+              <option value="All">All Years</option>
+              {years.map(year => (
+                <option key={year} value={year}>{year}</option>
+              ))}
+            </select>
+          </div>
+
           <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "10px" }}>
             <tbody>
               {filtered.map((pub, index) => (
@@ -140,10 +170,10 @@ export default function PublicationsPage() {
                     <strong>{pub.title}</strong>, {pub.venue}, {pub.year}.
                     {pub.link && (
                       <div style={{ marginTop: "8px" }}>
-                        <a 
-                          href={pub.link} 
-                          target="_blank" 
-                          rel="noreferrer" 
+                        <a
+                          href={pub.link}
+                          target="_blank"
+                          rel="noreferrer"
                           style={{ color: "#337ab7", textDecoration: "none", fontSize: "12px", fontWeight: "bold" }}
                         >
                           [Full Text]
@@ -155,16 +185,16 @@ export default function PublicationsPage() {
               ))}
             </tbody>
           </table>
-          
+
           {filtered.length === 0 && (
             <p style={{ color: "#999", marginTop: "20px", textAlign: "center" }}>
               No publications found in this category.
             </p>
           )}
         </div>
-        
+
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }
