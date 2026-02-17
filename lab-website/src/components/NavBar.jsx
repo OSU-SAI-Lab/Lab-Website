@@ -97,6 +97,10 @@ function NavBar() {
             Working With Us
           </Nav.Link>
 
+          <Nav.Link as={NavLink} to="/events" onClick={handleNavLinkClick}>
+            Events
+          </Nav.Link>
+
 
             {/*
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
