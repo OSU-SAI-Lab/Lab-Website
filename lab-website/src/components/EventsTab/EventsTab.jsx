@@ -1,5 +1,6 @@
 import React from 'react';
 import './EventsTab.css';
+import icicleFlyer from '../../assets/pdf/icicle-webinar-series-feb-27.pdf';
 
 const EventsTab = () => {
   const upcomingEvents = [
@@ -22,6 +23,23 @@ const EventsTab = () => {
   ];
 
   const pastEvents = [
+    {
+      conference: "ICICLE Webinar: AI In Agriculture, AI-as-a-Service",
+      city: "Online",
+      dates: "February 27, 2026",
+      link: "https://www.youtube.com/watch?v=PN-J_Rbg15w",
+      flyer: icicleFlyer,
+      sessions: [
+        {
+          dateLabel: "Saturday, January 31",
+          time: "TBD",
+          location: "Main Hall",
+          title: "Parallel Programming Paradigms",
+          type: "[Keynote]",
+          speakers: "Lab Member Name"
+        }
+      ]
+    },
     {
       conference: "HARVEST: First International Workshop on Applications of HPC and AI in Agriculture",
       city: "San Diego, CA",
@@ -50,6 +68,9 @@ const EventsTab = () => {
           <div key={idx} className="conference-block">
             <h3 className="conference-title">
               <span className="blue-text"><a href={event.link}>{event.conference}</a></span> — {event.city} ({event.dates})
+              {event.flyer && (
+                <span className="flyer-link"> | <a href={event.flyer} target="_blank" rel="noopener noreferrer">📄 Flyer</a></span>
+              )}
             </h3>
             
             {/* <table className="events-table">
