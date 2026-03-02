@@ -1,65 +1,97 @@
-.events-page {
+.latest-news-page {
   padding: 60px 100px;
   min-height: 100vh;
-  
-  /* Matches your working .hero pathing */
   background-image: 
     linear-gradient(rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.96)), 
     url("../backgrounds/polygon-scatter-haikei.svg");
-    
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Keeps it professional as you scroll */
-  
+  background-attachment: fixed;
   background-color: #ffffff; 
 }
 
-.events-hero {
-  margin-bottom: 40px;
-}
-
-.events-hero h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #222;
-}
-
+/* Page Header */
 .latest-news-title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 30px;
   color: #000;
 }
 
-.events-container {
+.latest-news-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 30px;
 }
 
-.event-card {
+.latest-news-card {
   border: none;
   border-radius: 12px;
   padding: 24px;
-  background: #ffffff; /* Card stays solid white */
-  
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07), 
-              0 4px 6px rgba(0, 0, 0, 0.04);
-  
-  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), 
-              box-shadow 0.3s ease;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07), 0 4px 6px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
-.event-card:hover {
+.latest-news-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
-/* ... keep the rest of your event-title and member styles ... */
+/* Card Specific Typography */
+.latest-news-card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #222;
+  line-height: 1.3;
+}
 
-.event-link {
+.latest-news-meta {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.latest-news-datetime, .latest-news-location {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.latest-news-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #444;
+  margin: 15px 0;
+}
+
+.latest-news-members {
+  margin-top: auto; /* Pushes members/link to bottom of card */
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  font-size: 0.85rem;
+}
+
+.latest-news-members ul {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0 0;
+}
+
+.latest-news-members li a {
+  color: #bb0000;
+  text-decoration: none;
+}
+
+.latest-news-members li a:hover {
+  text-decoration: underline;
+}
+
+.latest-news-link {
   display: inline-block;
   margin-top: 15px;
   color: #bb0000;
@@ -70,11 +102,6 @@
   letter-spacing: 0.5px;
 }
 
-/* Mobile adjustments */
 @media (max-width: 768px) {
-  .events-page {
-    padding: 40px 20px;
-    /* Often better to disable fixed background on mobile for performance */
-    background-attachment: scroll; 
-  }
+  .latest-news-page { padding: 40px 20px; background-attachment: scroll; }
 }
