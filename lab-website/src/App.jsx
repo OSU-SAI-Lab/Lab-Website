@@ -13,7 +13,8 @@ import "./App.css";
 
 function App() {
   const location = useLocation();
-  const isHomePage = location.pathname === "/";
+  const isHomePage =
+    location.pathname === "/" || location.pathname === "/Lab-Website/";
 
   return (
     <>
