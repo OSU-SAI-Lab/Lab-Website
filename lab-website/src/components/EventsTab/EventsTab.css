@@ -1,0 +1,104 @@
+.events-page {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  
+  .section-container {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  
+  .section-header {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .section-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  
+  /* Upcoming Theme (Green) */
+  .upcoming-theme .section-header {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+  }
+  
+  /* Past Theme (Yellow) */
+  .past-theme .section-header {
+    background-color: #fff9e6;
+    color: #856404;
+  }
+  
+  .section-content {
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  .conference-block {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .conference-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  
+  .blue-text {
+    color: #2b6cb0;
+  }
+  
+  .events-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  
+  .events-table th {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 8px;
+    color: #666;
+    font-weight: 600;
+  }
+  
+  .date-row td {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    padding: 12px;
+    font-size: 1.1rem;
+  }
+  
+  .detail-row td {
+    padding: 15px 8px;
+    vertical-align: top;
+    text-align: left;
+  }
+  
+  .event-title {
+    font-weight: 500;
+  }
+  
+  .event-type {
+    font-size: 0.8rem;
+    color: #555;
+    margin-top: 4px;
+  }
+  
+  @media (max-width: 768px) {
+    .events-table th { display: none; }
+    .detail-row td { 
+      display: block; 
+      width: 100%;
+      padding: 5px 15px;
+    }
+    .date-row td { text-align: center; }
+  }
