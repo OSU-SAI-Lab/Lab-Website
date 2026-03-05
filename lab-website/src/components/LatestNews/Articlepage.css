@@ -1,0 +1,308 @@
+/* src/components/ArticlePage/articlepage.css */
+
+/* ── Page wrapper ── */
+.article-page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 60px 100px 80px;
+    min-height: 100vh;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.96)),
+      url("../backgrounds/polygon-scatter-haikei.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #ffffff;
+  }
+  
+  /* ── Not-found state ── */
+  .article-not-found {
+    padding: 120px 40px;
+    text-align: center;
+    min-height: 60vh;
+  }
+  
+  .article-not-found h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 12px;
+  }
+  
+  .article-not-found p {
+    font-size: 1.05rem;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  /* ── Back link ── */
+  .article-back-link {
+    display: inline-block;
+    margin-bottom: 36px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #bb0000;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: color 0.2s ease;
+  }
+  
+  .article-back-link:hover {
+    color: #880000;
+  }
+  
+  /* ── Header ── */
+  .article-header {
+    margin-bottom: 36px;
+  }
+  
+  .article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .article-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: #bb0000;
+    background: rgba(187, 0, 0, 0.07);
+    border-radius: 4px;
+  }
+  
+  .article-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #111;
+    margin-bottom: 16px;
+  }
+  
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.92rem;
+    color: #777;
+  }
+  
+  .article-meta-separator {
+    color: #ccc;
+  }
+  
+  /* ── Slideshow ── */
+  .article-slideshow {
+    margin-bottom: 40px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f5f5f5;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+  }
+  
+  .slideshow-viewport {
+    position: relative;
+    width: 100%;
+    min-height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eaeaea;
+  }
+  
+  .slide-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* PDF slide */
+  .slide-pdf-wrapper {
+    position: relative;
+    width: 100%;
+    height: 480px;
+  }
+  
+  .slide-pdf {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  .slide-pdf-download {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 6px;
+    text-decoration: none;
+    backdrop-filter: blur(4px);
+    transition: background 0.2s;
+  }
+  
+  .slide-pdf-download:hover {
+    background: rgba(0, 0, 0, 0.75);
+  }
+  
+  /* Caption */
+  .slide-caption {
+    padding: 12px 20px;
+    font-size: 0.88rem;
+    color: #555;
+    background: #f9f9f9;
+    border-top: 1px solid #eee;
+    margin: 0;
+  }
+  
+  /* Controls */
+  .slideshow-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 14px 0;
+    background: #fff;
+    border-top: 1px solid #eee;
+  }
+  
+  .slideshow-btn {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: #f0f0f0;
+    font-size: 1.3rem;
+    line-height: 1;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+  }
+  
+  .slideshow-btn:hover {
+    background: #bb0000;
+    color: #fff;
+  }
+  
+  .slideshow-dots {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .slideshow-dot {
+    width: 10px;
+    height: 10px;
+    border: none;
+    border-radius: 50%;
+    background: #d0d0d0;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.25s, transform 0.25s;
+  }
+  
+  .slideshow-dot.active {
+    background: #bb0000;
+    transform: scale(1.25);
+  }
+  
+  .slideshow-dot:hover:not(.active) {
+    background: #999;
+  }
+  
+  /* ── Article body ── */
+  .article-body {
+    font-size: 1.08rem;
+    line-height: 1.75;
+    color: #333;
+  }
+  
+  .article-body p {
+    margin-bottom: 20px;
+  }
+  
+  .article-body a {
+    color: #bb0000;
+    text-decoration: underline;
+  }
+  
+  /* ── Lab members ── */
+  .article-members {
+    margin-top: 48px;
+    padding-top: 28px;
+    border-top: 1px solid #e4e4e4;
+  }
+  
+  .article-members-heading {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 14px;
+  }
+  
+  .article-members-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .article-member-chip {
+    display: inline-block;
+    padding: 8px 18px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #bb0000;
+    background: rgba(187, 0, 0, 0.06);
+    border: 1px solid rgba(187, 0, 0, 0.15);
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  
+  .article-member-chip:hover {
+    background: #bb0000;
+    color: #fff;
+    border-color: #bb0000;
+  }
+  
+  /* ── Responsive ── */
+  @media (max-width: 960px) {
+    .article-page {
+      padding: 40px 40px 60px;
+    }
+  
+    .article-title {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .article-page {
+      padding: 28px 18px 50px;
+    }
+  
+    .article-title {
+      font-size: 1.6rem;
+    }
+  
+    .slideshow-viewport {
+      min-height: 220px;
+    }
+  
+    .slide-pdf-wrapper {
+      height: 320px;
+    }
+  }

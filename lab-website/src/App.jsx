@@ -6,12 +6,11 @@ import ProjectDetail from "./components/ResearchPage/ProjectDetail";
 import PublicationsLayout from "./components/PublicationPage/PublicationsLayout";
 import PublicationsPage from "./components/PublicationPage/PublicationPage";
 import People from "./components/PeoplesPage/PeoplesPage";
-import WorkingWithUs from "./components/WorkingWithUs/workingwithus";  
-
+import WorkingWithUs from "./components/WorkingWithUs/workingwithus";
+import EventsTab from "./components/EventsTab/EventsTab";
+import ArticlePage from "./components/LatestNews/Articlepage";
 
 import "./App.css";
-import OSUEventPage from "./components/EventsTab/EventsTab";
-import EventsTab from "./components/EventsTab/EventsTab";
 
 function App() {
   const location = useLocation();
@@ -24,20 +23,22 @@ function App() {
       <div className={isHomePage ? "" : "page-content"}>
         <Routes>
           <Route path="/" element={<HomePage />} />
+
           <Route path="/research" element={<ResearchPage />} />
           <Route path="/research/:slug" element={<ProjectDetail />} />
 
           <Route path="/people" element={<People />} />
 
-          {/* Publications with subpages */}
           <Route path="/publications" element={<PublicationsLayout />}>
             <Route index element={<PublicationsPage />} />
           </Route>
-          
+
           <Route path="/workingwithus" element={<WorkingWithUs />} />
 
-          <Route path="/events" element={<EventsTab />} />
+          {/* Article detail — linked from Latest News section on homepage */}
+          <Route path="/news/:id" element={<ArticlePage />} />
 
+          <Route path="/events" element={<EventsTab />} />
         </Routes>
       </div>
     </>

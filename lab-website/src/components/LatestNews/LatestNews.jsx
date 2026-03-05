@@ -1,3 +1,6 @@
+// src/components/EventsPage/LatestNews.jsx
+
+import { Link } from "react-router-dom";
 import { events } from "./eventsData";
 import "./latestnews.css";
 
@@ -7,7 +10,7 @@ export default function LatestNews() {
       <h2 className="latest-news-title">Latest News</h2>
 
       <div className="latest-news-container">
-        {events.map(event => (
+        {events.map((event) => (
           <div key={event.id} className="latest-news-card">
             <h3 className="latest-news-card-title">{event.title}</h3>
 
@@ -37,7 +40,8 @@ export default function LatestNews() {
               </div>
             )}
 
-            {event.link && (
+            {/* External link if available, otherwise internal article page */}
+            {event.link ? (
               <a
                 href={event.link}
                 target="_blank"
@@ -46,6 +50,13 @@ export default function LatestNews() {
               >
                 Learn More →
               </a>
+            ) : (
+              <Link
+                to={`/news/${event.id}`}
+                className="latest-news-link"
+              >
+                Learn More →
+              </Link>
             )}
           </div>
         ))}
