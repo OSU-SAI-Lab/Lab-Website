@@ -1,6 +1,13 @@
 // src/components/EventsPage/eventsData.js
 // Single source of truth — used by both LatestNews (cards) and ArticlePage (detail)
 
+// ── Event 2 assets ──
+import satyakiPoster from "./images/satyaki_poster.jpg";
+import ashPoster from "./images/ash_poster.jpg";
+import bathymetry from "./images/Bathymetry_Poster.jpg";
+import ashPosterPdf from "./pdfs/Ash_Poster.pdf";
+
+
 export const events = [
     
   
@@ -45,29 +52,42 @@ export const events = [
       media: [
         {
           type: "image",
-          src: "/images/satyaki_poster.jpg",
+          src: satyakiPoster,
           alt: "Satyaki Roy Chowdry presenting his poster on bathymetry",
           caption:
             "Satyaki Roy Chowdry presents his research on Sentinel‑2 bathymetry.",
         },
         {
           type: "image",
-          src: "/images/ash_poster.jpg",
+          src: ashPoster,
           alt: "Aswathnarayanan Radhakrishnan presenting his poster on geospatial AI",
           caption:
             "Aswathnarayanan Radhakrishnan presents his work on geospatial AI pipelines.",
         },
+        {
+            type: "image",
+            src: bathymetry,
+            alt: "From Bands to Depth: Understanding Bathymetry Decisions on Sentinel‑2",
+            caption:
+              "From Bands to Depth: Understanding Bathymetry Decisions on Sentinel‑2",
+          },
+          {
+            type: "pdf",
+            src: ashPosterPdf,
+            alt: "Ash's Poster",
+            caption: "Ash's Poster",
+          },
       ],
       tags: ["Research", "Remote Sensing", "Geospatial AI", "Graduate"],
   
       members: [
         {
           name: "Satyaki Roy Chowdry",
-          profileUrl: "#",
+          profileUrl: "https://engineering.osu.edu/people/chowdhury.207",
         },
         {
           name: "Aswathnarayanan Radhakrishnan",
-          profileUrl: "#",
+          profileUrl: "https://www.linkedin.com/in/radhakrishnan97/",
         },
       ],
     },

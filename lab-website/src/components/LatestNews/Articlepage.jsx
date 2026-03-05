@@ -22,43 +22,18 @@ export default function ArticlePage() {
     );
   }
 
-  const hasMedia = article.media && article.media.length > 0;
-  const totalSlides = hasMedia ? article.media.length : 0;
+  // Separate images and PDFs
+  const imageMedia = article.media?.filter((m) => m.type === "image") || [];
+  const pdfMedia = article.media?.filter((m) => m.type === "pdf") || [];
+
+  const hasImages = imageMedia.length > 0;
+  const hasPdfs = pdfMedia.length > 0;
+  const totalSlides = imageMedia.length;
 
   const goToSlide = (index) => {
     if (index < 0) setCurrentSlide(totalSlides - 1);
     else if (index >= totalSlides) setCurrentSlide(0);
     else setCurrentSlide(index);
-  };
-
-  const renderMediaSlide = (item) => {
-    if (item.type === "pdf") {
-      return (
-        <div className="slide-pdf-wrapper">
-          <iframe
-            src={item.src}
-            title={item.alt}
-            className="slide-pdf"
-            frameBorder="0"
-          />
-          <a
-            href={item.src}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="slide-pdf-download"
-          >
-            Open PDF ↗
-          </a>
-        </div>
-      );
-    }
-    return (
-      <img
-        src={item.src}
-        alt={item.alt}
-        className="slide-image"
-      />
-    );
   };
 
   return (
@@ -93,16 +68,20 @@ export default function ArticlePage() {
         </div>
       </header>
 
-      {/* Slideshow */}
-      {hasMedia && (
+      {/* Image slideshow */}
+      {hasImages && (
         <div className="article-slideshow">
           <div className="slideshow-viewport">
-            {renderMediaSlide(article.media[currentSlide])}
+            <img
+              src={imageMedia[currentSlide].src}
+              alt={imageMedia[currentSlide].alt}
+              className="slide-image"
+            />
           </div>
 
-          {article.media[currentSlide].caption && (
+          {imageMedia[currentSlide].caption && (
             <p className="slide-caption">
-              {article.media[currentSlide].caption}
+              {imageMedia[currentSlide].caption}
             </p>
           )}
 
@@ -117,7 +96,7 @@ export default function ArticlePage() {
               </button>
 
               <div className="slideshow-dots">
-                {article.media.map((_, i) => (
+                {imageMedia.map((_, i) => (
                   <button
                     key={i}
                     className={`slideshow-dot ${i === currentSlide ? "active" : ""}`}
@@ -136,6 +115,23 @@ export default function ArticlePage() {
               </button>
             </div>
           )}
+        </div>
+      )}
+
+      {/* PDF download links — shown below images, above article body */}
+      {hasPdfs && (
+        <div className="article-pdfs">
+          {pdfMedia.map((pdf, i) => (
+            <a
+              key={i}
+              href={pdf.src}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="article-pdf-link"
+            >
+              📄 {pdf.caption || pdf.alt || "Download PDF"}
+            </a>
+          ))}
         </div>
       )}
 
