@@ -84,35 +84,21 @@ function NavBar() {
               News & Updates
             </Nav.Link>
 
-            {/* <Nav.Link as={NavLink} to="/news">
-              Events
-            </Nav.Link> */}
 
-            <Nav.Link as={NavLink} to="/people">
+          <Nav.Link as={NavLink} to="/events" onClick={handleNavLinkClick}>
+            Events
+          </Nav.Link>
+
+          <Nav.Link as={NavLink} to="/people">
               People
             </Nav.Link>
-
-            {/* <Nav.Link as={NavLink} to="/events">
-              Awards
-            </Nav.Link> */}
 
 
            <Nav.Link as={NavLink} to="/workingwithus" onClick={handleNavLinkClick}>
             Working With Us
           </Nav.Link>
 
-          <Nav.Link as={NavLink} to="/events" onClick={handleNavLinkClick}>
-            Events
-          </Nav.Link>
-
-
-            {/*
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item as={NavLink} to="/action1">
-                Action
-              </NavDropdown.Item>
-            </NavDropdown>
-            */}
+          
           </Nav>
         </Navbar.Collapse>
       </Container>
