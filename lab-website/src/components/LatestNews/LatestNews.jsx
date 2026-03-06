@@ -4,13 +4,18 @@ import { Link } from "react-router-dom";
 import { events } from "./eventsData";
 import "./latestnews.css";
 
+// Sort events by date, most recent first
+const sortedEvents = [...events].sort(
+  (a, b) => new Date(b.date) - new Date(a.date)
+);
+
 export default function LatestNews() {
   return (
     <div className="latest-news-page">
       <h2 className="latest-news-title">Latest News</h2>
 
       <div className="latest-news-container">
-        {events.map((event) => (
+        {sortedEvents.map((event) => (
           <div key={event.id} className="latest-news-card">
             <h3 className="latest-news-card-title">{event.title}</h3>
 

@@ -7,10 +7,186 @@ import ashPoster from "./images/ash_poster.jpg";
 import bathymetry from "./images/Bathymetry_Poster.jpg";
 import ashPosterPdf from "./pdfs/Ash_Poster.pdf";
 
+// ── Event 3 assets (Farm Science Review) ──
+// TODO: Get actual images from Harikesh or Parth and update these imports
+// import fsrBooth from "./images/fsr_booth.jpg";
+// import fsrFieldDemo from "./images/fsr_field_demo.jpg";
+// import fsrTeam from "./images/fsr_team.jpg";
+
 
 export const events = [
-    
-  
+
+    {
+      id: 3,
+      title: "SAI Lab and ICICLE Showcase AI-Enabled Agriculture Tools at Farm Science Review 2025",
+      type: "Exhibition / Demo",
+      date: "September 2025",
+      time: null,
+      mode: "In-Person",
+      location: "Molly Caren Agricultural Center, London, Ohio",
+      description:
+        "Members of the SAI Lab team, part of the NSF ICICLE AI Institute, demonstrated AI-enabled digital agriculture tools at Farm Science Review 2025, highlighting practical HPC and AI workflows for on-farm decision-making.",
+      link: null,
+
+      author: "SAI Lab",
+      body: `
+        <p>
+          Members of the SAI Lab team, who are also part of the NSF ICICLE AI
+          Institute, showcased AI-enabled digital agriculture tools at Farm
+          Science Review 2025, held September 16–18 at Ohio State's Molly Caren
+          Agricultural Center in London, Ohio. The three-day show brings together
+          more than 100,000 farmers, agribusiness professionals, and students to
+          explore new technologies, management practices, and research-based
+          recommendations from Ohio State and partners.
+        </p>
+        <p>
+          At the ICICLE exhibit, visitors saw how high-performance computing (HPC)
+          and artificial intelligence can support practical decision-making on the
+          farm, from crop and soil monitoring to equipment efficiency.
+          Demonstrations highlighted how ICICLE's software components and data
+          pipelines connect field data with AI models, enabling timely insights
+          that can help farmers manage inputs, reduce risk, and improve
+          profitability.
+        </p>
+        <p>
+          Hands-on demos included AI-powered tools for field imagery analysis,
+          object detection, and decision support that can be integrated into
+          existing farm operations. SAI Lab researchers—who contribute to the NSF
+          ICICLE AI Institute—and extension specialists were on-site to answer
+          questions, gather feedback from producers, and discuss opportunities for
+          on-farm collaboration and testing.
+        </p>
+        <p>
+          By bringing these capabilities to Farm Science Review, the SAI Lab and
+          ICICLE team aims to make advanced AI and HPC systems more accessible,
+          interoperable, and impactful for producers of all sizes. The exhibit
+          emphasized practical workflows that move from data collection in fields
+          to actionable recommendations that support sustainable and resilient
+          agricultural systems.
+        </p>
+      `,
+      media: [
+        // {
+        //   type: "image",
+        //   src: fsrBooth,
+        //   alt: "SAI Lab and ICICLE booth at Farm Science Review with farmers engaging with demos",
+        //   caption:
+        //     "SAI Lab researchers from the NSF ICICLE AI Institute demonstrate AI-enabled decision tools with Ohio farmers at Farm Science Review 2025.",
+        // },
+        // {
+        //   type: "image",
+        //   src: fsrFieldDemo,
+        //   alt: "Close-up of AI-powered field technology demo at Farm Science Review",
+        //   caption:
+        //     "Producers explore ICICLE's AI and HPC-powered workflows for crop and field management at the Molly Caren Agricultural Center.",
+        // },
+        // {
+        //   type: "image",
+        //   src: fsrTeam,
+        //   alt: "SAI Lab team members and extension partners at Farm Science Review",
+        //   caption:
+        //     "SAI Lab team members and ICICLE contributors at the Farm Science Review 2025 exhibit.",
+        // },
+      ],
+      tags: ["Digital Agriculture", "HPC", "AI", "Outreach", "ICICLE"],
+
+      // TODO: Update with actual member names/profiles from Harikesh or Parth
+      members: [
+        {
+          name: "Harikesh Sunkara",
+          profileUrl: "https://osu-sai-lab.github.io/SAI-Lab/people",
+        },
+        {
+          name: "Parth Patel",
+          profileUrl: "https://osu-sai-lab.github.io/SAI-Lab/people",
+        },
+      ],
+    },
+
+    {
+      id: 1,
+      title:
+        "ICICLE Mentors High School Students for the Presidential AI Challenge",
+      type: "Outreach / Mentorship",
+      date: "January 2026",
+      time: null,
+      mode: "In-Person",
+      location: "The Ohio State University",
+      description:
+        "ICICLE researchers mentored high school students participating in the Presidential AI Challenge, guiding teams through problem formulation, ethical AI considerations, and solution development.",
+      link: "https://icicle.osu.edu/news/2026/01/icicle-mentors-high-school-students-presidential-ai-challenge",
+
+      author: "ICICLE Communications",
+      body: `
+        <p>
+          Researchers from the ICICLE AI Institute at The Ohio State University
+          dedicated their time and expertise to mentoring high school students
+          participating in the prestigious Presidential AI Challenge. Over the
+          course of several weeks, ICICLE team members guided student teams
+          through the end-to-end process of formulating real-world problems,
+          designing responsible AI solutions, and presenting their work to a
+          panel of judges.
+        </p>
+        <p>
+          The Presidential AI Challenge is a national competition that encourages
+          young learners to explore the transformative potential of artificial
+          intelligence while grappling with the ethical considerations that come
+          with deploying these technologies. Students were tasked with identifying
+          a problem in their community and proposing an AI-driven solution that
+          balances innovation with fairness, transparency, and accountability.
+        </p>
+        <p>
+          ICICLE mentors helped students refine their ideas, navigate data
+          collection and preprocessing, and critically evaluate the societal
+          impacts of their proposals. The mentorship sessions also introduced
+          students to core concepts in cyberinfrastructure, giving them a
+          glimpse into the large-scale computing systems that power modern AI
+          research.
+        </p>
+        <p>
+          "Working with these students was incredibly inspiring," said one of the
+          ICICLE mentors. "Their creativity and eagerness to learn reminds us why
+          outreach is such a vital part of our mission."
+        </p>
+      `,
+      media: [
+        {
+          type: "image",
+          src: "/images/articles/presidential-ai-challenge-1.jpg",
+          alt: "ICICLE mentors working with high school students",
+          caption: "ICICLE researchers guide student teams at Ohio State.",
+        },
+        {
+          type: "image",
+          src: "/images/articles/presidential-ai-challenge-2.jpg",
+          alt: "Students presenting their AI solutions",
+          caption: "Student teams present their AI-driven community solutions.",
+        },
+        {
+          type: "pdf",
+          src: "/documents/presidential-ai-challenge-overview.pdf",
+          alt: "Presidential AI Challenge Overview",
+          caption: "Program overview and guidelines (PDF).",
+        },
+      ],
+      tags: ["Outreach", "Mentorship", "K-12", "AI Ethics"],
+
+      members: [
+        {
+          name: "Mrunal Hole",
+          profileUrl: "https://www.linkedin.com/in/mrunalhole/",
+        },
+        {
+          name: "Naveen Kamath",
+          profileUrl: "https://kamaths.info",
+        },
+        {
+          name: "Rishi Makineni",
+          profileUrl: "https://www.linkedin.com/in/rishikesh-makineni/",
+        },
+      ],
+    },
+
     {
       id: 2,
       title: "SAI Lab Students Present Research at CSE Graduate Visit Day",
@@ -22,7 +198,7 @@ export const events = [
       description:
         "SAI Lab graduate researchers Satyaki Roy Chowdry and Aswathnarayanan Radhakrishnan presented posters on satellite bathymetry and geospatial AI at CSE Graduate Visit Day.",
       link: null,
-  
+
       author: "SAI Lab",
       body: `
         <p>
@@ -79,7 +255,7 @@ export const events = [
           },
       ],
       tags: ["Research", "Remote Sensing", "Geospatial AI", "Graduate"],
-  
+
       members: [
         {
           name: "Satyaki Roy Chowdry",
@@ -91,94 +267,10 @@ export const events = [
         },
       ],
     },
-    {
-        id: 1,
-        title:
-          "ICICLE Mentors High School Students for the Presidential AI Challenge",
-        type: "Outreach / Mentorship",
-        date: "January 2026",
-        time: null,
-        mode: "In-Person",
-        location: "The Ohio State University",
-        description:
-          "ICICLE researchers mentored high school students participating in the Presidential AI Challenge, guiding teams through problem formulation, ethical AI considerations, and solution development.",
-        link: "https://icicle.osu.edu/news/2026/01/icicle-mentors-high-school-students-presidential-ai-challenge", // no external link — "Learn More" routes to the article page
-    
-        // Article detail fields
-        author: "ICICLE Communications",
-        body: `
-          <p>
-            Researchers from the ICICLE AI Institute at The Ohio State University
-            dedicated their time and expertise to mentoring high school students
-            participating in the prestigious Presidential AI Challenge. Over the
-            course of several weeks, ICICLE team members guided student teams
-            through the end-to-end process of formulating real-world problems,
-            designing responsible AI solutions, and presenting their work to a
-            panel of judges.
-          </p>
-          <p>
-            The Presidential AI Challenge is a national competition that encourages
-            young learners to explore the transformative potential of artificial
-            intelligence while grappling with the ethical considerations that come
-            with deploying these technologies. Students were tasked with identifying
-            a problem in their community and proposing an AI-driven solution that
-            balances innovation with fairness, transparency, and accountability.
-          </p>
-          <p>
-            ICICLE mentors helped students refine their ideas, navigate data
-            collection and preprocessing, and critically evaluate the societal
-            impacts of their proposals. The mentorship sessions also introduced
-            students to core concepts in cyberinfrastructure, giving them a
-            glimpse into the large-scale computing systems that power modern AI
-            research.
-          </p>
-          <p>
-            "Working with these students was incredibly inspiring," said one of the
-            ICICLE mentors. "Their creativity and eagerness to learn reminds us why
-            outreach is such a vital part of our mission."
-          </p>
-        `,
-        media: [
-          {
-            type: "image",
-            src: "/images/articles/presidential-ai-challenge-1.jpg",
-            alt: "ICICLE mentors working with high school students",
-            caption: "ICICLE researchers guide student teams at Ohio State.",
-          },
-          {
-            type: "image",
-            src: "/images/articles/presidential-ai-challenge-2.jpg",
-            alt: "Students presenting their AI solutions",
-            caption: "Student teams present their AI-driven community solutions.",
-          },
-          {
-            type: "pdf",
-            src: "/documents/presidential-ai-challenge-overview.pdf",
-            alt: "Presidential AI Challenge Overview",
-            caption: "Program overview and guidelines (PDF).",
-          },
-        ],
-        tags: ["Outreach", "Mentorship", "K-12", "AI Ethics"],
-    
-        members: [
-          {
-            name: "Mrunal Hole",
-            profileUrl: "https://www.linkedin.com/in/mrunalhole/",
-          },
-          {
-            name: "Naveen Kamath",
-            profileUrl: "https://kamaths.info",
-          },
-          {
-            name: "Rishi Makineni",
-            profileUrl: "https://www.linkedin.com/in/rishikesh-makineni/",
-          },
-        ],
-      },
-  
-    // Add more events here — one object serves both the card and the article page
-  ];
-  
-  // Helper lookup for ArticlePage: find by id from the URL param
-  export const getArticleById = (id) =>
-    events.find((e) => e.id === Number(id));
+
+  // Add more events here — one object serves both the card and the article page
+];
+
+// Helper lookup for ArticlePage: find by id from the URL param
+export const getArticleById = (id) =>
+  events.find((e) => e.id === Number(id));
