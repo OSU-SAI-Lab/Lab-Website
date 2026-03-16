@@ -199,40 +199,27 @@ export const events = [
   // Add more events here — one object serves both the card and the article page
   {
     id: 2,
-    title: "SAI Lab Students Present Research at WACV",
+    title: "SAI Lab Student Presents Research at IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)",
     type: "Research Presentation",
     date: "March 2026",
     time: null,
     mode: "In-Person",
     location: "Tucson, AZ",
     description:
-      "SAI Lab graduate researchers Satyaki Roy Chowdhury and Aswathnarayanan Radhakrishnan presented posters on satellite bathymetry and geospatial AI at WACV.",
+      "SAI Lab graduate researcher, Satyaki Roy Chowdhury, presented posters on satellite bathymetry at WACV.",
     link: null,
 
     author: "SAI Lab",
     body: `
       <p>
-        Two graduate researchers from the Systems and AI (SAI) Lab, Satyaki Roy
-        Chowdhury and Aswathnarayanan Radhakrishnan, presented their work at the
-        WACV.
+        Satyaki Roy Chowdhury, a graduate researchers from the Systems and AI (SAI) Lab, presented his work at the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV 2026), held in Tucson, Arizona.
       </p>
       <p>
-        Satyaki Roy Chowdhury presented <em>"From Bands to Depth: Understanding
-        Bathymetry Decisions on Sentinel‑2,"</em> which examines the use of
-        multispectral satellite data for depth estimation and improved
-        understanding of aquatic environments.
+      WACV is the premier international computer vision event organized jointly by the IEEE and the Computer Vision Foundation (CVF), comprising the main conference and several co-located workshops and tutorials. It is ranked among the top ten venues in the Computer Vision and Pattern Recognition category according to Google Scholar's H5-index, and has consistently held a CORE ranking of A. Proceedings are published by IEEE and indexed in the IEEE Xplore Digital Library, giving accepted papers broad visibility across the global research community.
       </p>
+
       <p>
-        Aswathnarayanan Radhakrishnan presented <em>"Mining Earth's Digital
-        Strata for Geospatial AI: Bridging Data Collection, Synthesis, and
-        Self‑Training for Intelligent Earth Observation,"</em> focusing on
-        advancing geospatial AI through integrated data pipelines and
-        self-training frameworks.
-      </p>
-      <p>
-        Their posters reflect the SAI Lab's commitment to advancing research at
-        the intersection of artificial intelligence, remote sensing, and Earth
-        systems science.
+        Satyaki Roy Chowdhury presented "From Bands to Depth: Understanding Bathymetry Decisions on Sentinel‑2," which examines the use of multispectral satellite data for depth estimation and improved understanding of aquatic environments.
       </p>
     `,
     media: [
@@ -264,10 +251,6 @@ export const events = [
       {
         name: "Satyaki Roy Chowdhury",
         profileUrl: "https://engineering.osu.edu/people/chowdhury.207",
-      },
-      {
-        name: "Aswathnarayanan Radhakrishnan",
-        profileUrl: "https://www.linkedin.com/in/radhakrishnan97/",
       },
     ],
   },
